@@ -32,23 +32,25 @@ Add the following to your project's `pom.xml`:
 ### ✅ Usage Example
 
 ```java
-package com.sendstreak.example;
+package org.example;
 
 import com.sendstreak.jdk.SendStreak;
 import com.sendstreak.jdk.model.Email;
 
-public class Main {
+public class App {
     public static void main(String[] args) {
         // Initialize the SDK with your API key
         SendStreak client = new SendStreak("your-api-key-here");
 
         // Send an email
-        Email email = new Email("recipient@example.com", "welcome-template");
+        Email email = new Email("user@example.com", "email-template-slug");
+        email.getAttributes().putString("name", "John");
         client.sendMail(email);
 
         System.out.println("Email sent successfully!");
     }
 }
+
 ```
 
 ---
@@ -87,15 +89,15 @@ client.deleteContact(contact);
 
 ---
 
-## We accept contributions here
-
-If you're a Java developer using SendStreak and want to contribute to this SDK, we're more than happy to have your pull request here - and your name on the hall of fame forever!
-
----
-
 ## 📦 Support
 
 For support or API-related questions, please contact **support@sendstreak.com**.
+
+---
+
+## We accept contributions here
+
+If you're a Java developer using SendStreak and want to contribute to this SDK, we're more than happy to have your pull request here - and your name on the hall of fame forever!
 
 ---
 
