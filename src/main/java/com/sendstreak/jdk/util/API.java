@@ -44,8 +44,6 @@ public abstract class API {
 
         HttpRequest request = builder.build();
 
-        System.out.println(request.method() + " : " + request.uri());
-
         try {
             client.send(request, HttpResponse.BodyHandlers.ofString());
         } catch (Exception e) {
